@@ -5,7 +5,7 @@ void main() {
   runApp(const LankaGoApp());
 }
 
-class LankaGoApp extends StatlessWidget {
+class LankaGoApp extends StatelessWidget {
   const LankaGoApp({super.key});
 
   @override
