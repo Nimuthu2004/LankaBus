@@ -45,3 +45,19 @@ class LanguageScreen extends StatelessWidget {
       ),
     );
   }
+
+
+    // Placeholder for the gradientBackground function
+  Widget gradientBackground({required Widget child}) {
+    return Container(
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(
+          colors: [Colors.blue, Colors.purple],
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+        ),
+      ),
+      child: child,
+    );
+  }
+}
