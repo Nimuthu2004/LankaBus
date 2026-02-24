@@ -28,5 +28,10 @@ app.post('get-ticket-fare', async(requestAnimationFrame, res)=>{
     .eq('start_station_id', startId)
     .eq('end_station_id', endId)
     .single();
+
+    if(fError||!fareData){
+        return res.status(404).json({error:"No fare defined for this route"});
+    }
+    
     }
 });
