@@ -1,5 +1,5 @@
-const {createClient}=reqiure('@superbase/superbase-js');
-const express=require=require('express');
+const {createClient}=require('@supabase/supabase-js');
+const express=require('express');
 
 const app=express();
 const superbase=createClient();
@@ -10,7 +10,7 @@ app.post('get-ticket-fare', async(requestAnimationFrame, res)=>{
     const {startLocation, endLocation}=requestAnimationFrame.body;
 
     try{
-        const{ data:stations, error:sError}=await superbase
+        const{ data:stations, error:sError}=await supabase
         .from('stations')
         .select('id,Name')
         .in('Name',[startLocation, endLocation]);
@@ -18,6 +18,15 @@ app.post('get-ticket-fare', async(requestAnimationFrame, res)=>{
     if (sError|| !stations|| stations.length<2){
         return res.status(404).json({error:"one or both stations not found."});
     }
-    
+
+    const startId=stations.find(s=>s.name===startLocation).id;
+    const endId=stations.find(s=>s.name===endLocation).id
+
+    const{data:fareData, error:fError}=await supabase
+    .from('Fares')
+    .select('amount')
+    .eq('start_station_id', startId)
+    .eq('end_station_id', endId)
+    .single();
     }
 });
