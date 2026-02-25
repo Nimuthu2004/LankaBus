@@ -66,4 +66,42 @@ class _HomeScreenState extends State<HomeScreen> {
                              buildMenuButton(Icons.map, "Route"),
                              buildMenuButton(Icons.account_balance_wallet, "Wallet"),
                              buildMenuButton(Icons.history, "History"),
-                             
+
+                             const Spacer(),
+                             const SizedBox(height: 80), // space for bottom nav
+                        ],
+                    ),
+                ),
+            ),
+
+            /// 🔹 Floating QR Button
+             Positioned(
+                bottom: 45,
+                left: MediaQuery.of(context).size.width / 2 - 30,
+                child: GestureDetector(
+                    onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (_) => const QRScanScreen())),
+                        
+                    },
+                    child: Container(
+                        padding: const EdgeInsets.all(18),
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(50),
+                            boxShadow: [
+                                BoxShadow(
+                                    color: Colors.black.withOpacity(0.4),
+                                    blurRadius: 10,
+                                ),
+                            ],
+                        ),
+                        child: const Icon(Icons.qr_code_scanner,
+                            size: 28, color: Colors.black),
+                    ),
+                ),
+            ),
+        ],
+      ),
