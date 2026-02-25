@@ -32,6 +32,13 @@ app.post('get-ticket-fare', async(requestAnimationFrame, res)=>{
     if(fError||!fareData){
         return res.status(404).json({error:"No fare defined for this route"});
     }
-    
+
+    res.json({
+        route:'${startLocation} to ${endLocation}',
+        fare:fareData.amount
+    });
+
+    }catch(err){
+        res.status(500).json({error:"Server error occurred"});
     }
 });
