@@ -15,3 +15,28 @@ class LoginTypeScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              const Text("Login as:",
+                  style: TextStyle(fontSize: 24, color: Colors.white)),
+              const SizedBox(height: 30),
+              CustomButton(
+                  text: "User",
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (_) => const LoginScreen()));
+                  }),
+              const SizedBox(height: 20),
+              CustomButton(
+                  text: "Conductor",
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => const ConductorRegisterScreen()));
+                  }),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
