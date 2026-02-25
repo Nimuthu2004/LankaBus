@@ -18,3 +18,13 @@ class _HomeScreenState extends State<HomeScreen> {
       extendBody: true, // important for transparent nav
       body: Stack(
         children: [
+            ///  Background Image
+            SizedBox.expand(
+                hild: Image.asset(
+                "assets/images/home_bg.png",
+                fit: BoxFit.cover,
+                ),
+            ),
+
+            /// 🔹 Dark overlay
+             Container(color: Colors.black.withOpacity(0.3)),
