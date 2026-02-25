@@ -36,3 +36,82 @@ class TravelBookingSlide extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 30),
+                            // From Field
+              Container(
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.grey.shade300),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      hintText: 'From',
+                      border: InputBorder.none,
+                      hintStyle: TextStyle(color: Colors.grey, fontSize: 16),
+                      prefixIcon: Icon(Icons.flight_takeoff, color: Color(0xFF4A90E2)),
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 16),
+
+              // To Field
+              Container(
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.grey.shade300),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      hintText: 'To',
+                      border: InputBorder.none,
+                      hintStyle: TextStyle(color: Colors.grey, fontSize: 16),
+                      prefixIcon: Icon(Icons.flight_land, color: Color(0xFF4A90E2)),
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 16),
+
+              // Date Field
+              Container(
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.grey.shade300),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      hintText: 'Date',
+                      border: InputBorder.none,
+                      hintStyle: TextStyle(color: Colors.grey, fontSize: 16),
+                      prefixIcon: Icon(Icons.calendar_today, color: Color(0xFF4A90E2)),
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 16),
+
+              // No of Passengers Field
+              Container(
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.grey.shade300),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      hintText: 'No of Passengers',
+                      border: InputBorder.none,
+                      hintStyle: TextStyle(color: Colors.grey, fontSize: 16),
+                      prefixIcon: Icon(Icons.people, color: Color(0xFF4A90E2)),
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 30),
