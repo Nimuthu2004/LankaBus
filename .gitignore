@@ -1,0 +1,11 @@
+#ignore the large library folder
+node_modules/
+
+#Ignore environment variables
+.env
+
+.DS_Store
+Thumbs.db
+
+dist/
+build/
