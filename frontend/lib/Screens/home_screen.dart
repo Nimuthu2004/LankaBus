@@ -11,3 +11,10 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int selectedIndex = 0;
+
+    @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      extendBody: true, // important for transparent nav
+      body: Stack(
+        children: [
