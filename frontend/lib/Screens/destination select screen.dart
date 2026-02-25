@@ -26,3 +26,13 @@ class TravelBookingSlide extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+                            // Title
+              const Text(
+                'Select Your Destination',
+                style: TextStyle(
+                  fontSize: 28,
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xFF1E2B3C),
+                ),
+              ),
+              const SizedBox(height: 30),
