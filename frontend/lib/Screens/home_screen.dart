@@ -59,3 +59,11 @@ class _HomeScreenState extends State<HomeScreen> {
                              buildInputField("To"),
                              const SizedBox(height: 15),
                              buildInputField("Date"),
+
+                             const SizedBox(height: 30),
+
+                             buildMenuButton(Icons.confirmation_number, "Tickets"),
+                             buildMenuButton(Icons.map, "Route"),
+                             buildMenuButton(Icons.account_balance_wallet, "Wallet"),
+                             buildMenuButton(Icons.history, "History"),
+                             
