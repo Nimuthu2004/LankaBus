@@ -2,7 +2,11 @@ const {createClient}=require('@supabase/supabase-js');
 const express=require('express');
 
 const app=express();
-const superbase=createClient();
+
+const URL='https://mrcncoyacorhwefxvjyz.supabase.co'.trim();
+const KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1yY25jb3lhY29yaHdlZnh2anl6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzAwNDg4NDcsImV4cCI6MjA4NTYyNDg0N30.fKTHccieKDMwDsj-qU-dA7grZGsYrGd8g0scb0TUkjA'.trim();
+
+const superbase=createClient(URL, KEY);
 
 app.use(express.json());
 
