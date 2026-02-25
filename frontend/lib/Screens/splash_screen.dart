@@ -38,3 +38,16 @@ class SplashScreen extends StatelessWidget {
     );
   }
 }
+
+Widget gradientBackground({required Widget child}) {
+  return Container(
+    decoration: const BoxDecoration(
+      gradient: LinearGradient(
+        colors: [Color(0xFF1E3C72), Color(0xFF2A5298)],
+        begin: Alignment.topCenter,
+        end: Alignment.bottomCenter,
+      ),
+    ),
+    child: child,
+  );
+}
