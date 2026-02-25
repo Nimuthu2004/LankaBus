@@ -11,3 +11,17 @@ const buses=[
         route:"Jaffna 87 Colombo"
     }
 ];
+
+app.post('/api/scan-bus', (req, res)=>{
+    const{scannedData}=req.body;
+    const bus=buses.find(buses.qr_code_id===scannedData);
+
+    if (!bus){
+        return res.status(404).json({
+            success:false,
+            message:"Bus not found. Please scan a valid QR code."
+        });
+    }
+
+    
+})
