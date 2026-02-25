@@ -139,4 +139,10 @@ class TravelBookingSlide extends StatelessWidget {
                     ),
                   ),
                 ),
-              ),
+              ),            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
