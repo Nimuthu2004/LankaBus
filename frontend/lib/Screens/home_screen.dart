@@ -51,3 +51,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                style:
                                 TextStyle(fontSize: 14, color: Colors.white70),
                              ),
+                             
+                             const SizedBox(height: 30),
+
+                             buildInputField("From"),
+                             const SizedBox(height: 15),
+                             buildInputField("To"),
+                             const SizedBox(height: 15),
+                             buildInputField("Date"),
