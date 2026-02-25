@@ -28,3 +28,26 @@ class _HomeScreenState extends State<HomeScreen> {
 
             /// 🔹 Dark overlay
              Container(color: Colors.black.withOpacity(0.3)),
+
+            /// 🔹 Main Content
+            SafeArea(
+                child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                             const SizedBox(height: 20),
+
+                             /// Greeting
+                             const Text(
+                                "Hi, Binuka",
+                                style: TextStyle(
+                                    fontSize: 26,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white),
+                            ),
+                             const Text(
+                                "Let's start the journey",
+                               style:
+                                TextStyle(fontSize: 14, color: Colors.white70),
+                             ),
