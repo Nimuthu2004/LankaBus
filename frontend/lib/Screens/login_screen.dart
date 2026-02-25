@@ -17,3 +17,29 @@ class LoginScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              const CustomTextField(hint: "E-mail or Username"),
+              const CustomTextField(hint: "Password", obscure: true),
+              const SizedBox(height: 20),
+              CustomButton(
+                  text: "Login",
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (_) => const HomeScreen()));
+                  }),
+              const SizedBox(height: 10),
+              TextButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => const UserRegisterScreen()));
+                  },
+                  child: const Text("Sign Up",
+                      style: TextStyle(color: Colors.white)))
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
