@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/lanka_go.iml" filepath="$PROJECT_DIR$/lanka_go.iml" />
-      <module fileurl="file://$PROJECT_DIR$/android/lanka_go_android.iml" filepath="$PROJECT_DIR$/android/lanka_go_android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Professional UX Planning Document.iml" filepath="$PROJECT_DIR$/.idea/Professional UX Planning Document.iml" />
     </modules>
   </component>
 </project>
