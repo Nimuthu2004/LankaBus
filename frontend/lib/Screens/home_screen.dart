@@ -131,4 +131,55 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
   }
-  
+
+  /// 🔹 Input Field
+  Widget buildInputField(String hint) {
+    return Container(
+        padding: const EdgeInsets.symmetric(horizontal: 15),
+        decoration: BoxDecoration(
+            color: Colors.white.withOpacity(0.9),
+            borderRadius: BorderRadius.circular(30),
+        ),
+        child: TextField(
+            decoration: InputDecoration(
+                hintText: hint,
+                border: InputBorder.none,
+                suffixIcon: const Icon(Icons.tune),
+            ),
+        ),
+    );
+  }
+
+  /// 🔹 Menu Button
+  Widget buildMenuButton(IconData icon, String text) {
+    return Container(
+      margin: const EdgeInsets.only(bottom: 15),
+      child: ElevatedButton.icon(
+         style: ElevatedButton.styleFrom(
+             backgroundColor: Colors.white.withOpacity(0.85),
+             foregroundColor: Colors.black,
+             padding: const EdgeInsets.symmetric(vertical: 15),
+             shape:
+                    RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+            ),
+            onPressed: () {},
+            icon: Icon(icon),
+            label: Text(text),
+        ),
+    );
+  }
+
+  /// 🔹 Bottom Nav Item
+  Widget buildNavItem(IconData icon, int index) {
+   return GestureDetector(
+     onTap: () {
+        setState(() {
+            selectedIndex = index;
+        });
+     },
+        child: Icon(icon,
+            size: 28,
+            color: selectedIndex == index ? Colors.white : Colors.white70),
+    );
+  }
+}
