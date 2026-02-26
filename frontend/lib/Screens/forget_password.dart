@@ -23,3 +23,24 @@ class ForgotPasswordScreen extends StatelessWidget {
                     color: Colors.white),
               ),
               const SizedBox(height: 30),
+                            const CustomTextField(
+                hint: "Enter your registered E-mail",
+              ),
+
+              const SizedBox(height: 20),
+
+              CustomButton(
+                text: "Send Reset Link",
+                onPressed: () {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content:
+                          Text("Password reset link sent to your email"),
+                    ),
+                  );
+
+                  Navigator.pop(context);
+                },
+              ),
+
+              const SizedBox(height: 20),
