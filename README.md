@@ -14,11 +14,11 @@ This project was developed as part of the Software Engineering coursework at the
 
 Sri Lanka’s highway buses currently rely on manual, cash-based ticketing systems which cause:
 
-* Revenue leakage
-* Passenger inconvenience
-* Lack of real-time seat availability
-* No digital payment options
-* Poor operational transparency
+- Revenue leakage
+- Passenger inconvenience
+- Lack of real-time seat availability
+- No digital payment options
+- Poor operational transparency
 
 LankaBus provides a fully digital solution to eliminate these inefficiencies.
 
@@ -28,35 +28,35 @@ LankaBus provides a fully digital solution to eliminate these inefficiencies.
 
 ### 👤 Passenger Mobile App
 
-* User Registration & Login (JWT Authentication)
-* Route Search & Selection
-* Real-time Seat Reservation
-* QR-based Digital Ticket Generation
-* Multi-payment Support (LankaQR, Wallet, Card – simulated)
-* Booking History
-* Multi-language Support (Sinhala / Tamil / English)
-* Push Notifications
+- User Registration & Login (JWT Authentication)
+- Route Search & Selection
+- Real-time Seat Reservation
+- QR-based Digital Ticket Generation
+- Multi-payment Support (LankaQR, Wallet, Card – simulated)
+- Booking History
+- Multi-language Support (Sinhala / Tamil / English)
+- Push Notifications
 
 ### 🎫 Conductor App
 
-* Secure Login
-* QR Code Ticket Validation
-* Offline Ticket Verification
-* Daily Trip Summary
+- Secure Login
+- QR Code Ticket Validation
+- Offline Ticket Verification
+- Daily Trip Summary
 
 ### 🖥 Admin Dashboard
 
-* Revenue Analytics
-* Route & Bus Management
-* Complaint Management System
-* Operational Reports
-* Data Analytics
+- Revenue Analytics
+- Route & Bus Management
+- Complaint Management System
+- Operational Reports
+- Data Analytics
 
 ### 🤖 AI & Smart Services
 
-* AI-based Complaint Assistant
-* Real-time GPS Tracking
-* Firebase Push Notifications
+- AI-based Complaint Assistant
+- Real-time GPS Tracking
+- Firebase Push Notifications
 
 ---
 
@@ -87,33 +87,33 @@ External Services:
 
 ### Frontend
 
-* Flutter (Cross-platform Mobile Development)
-* Dart
-* Dio (API Integration)
-* Provider (State Management)
-* QR Scanner Plugin
-* Firebase Cloud Messaging
-* Google Maps API
+- Flutter (Cross-platform Mobile Development)
+- Dart
+- Dio (API Integration)
+- Provider (State Management)
+- QR Scanner Plugin
+- Firebase Cloud Messaging
+- Google Maps API
 
 ### Backend
 
-* Node.js
-* Express.js
-* MongoDB (Mongoose)
-* JWT Authentication
-* bcrypt (Password Encryption)
-* QR Code Generator
+- Node.js
+- Express.js
+- MongoDB (Mongoose)
+- JWT Authentication
+- bcrypt (Password Encryption)
+- QR Code Generator
 
 ### Database
 
-* MongoDB Atlas (Cloud Database)
+- MongoDB Atlas (Cloud Database)
 
 ### Tools
 
-* Git & GitHub (Version Control)
-* Postman (API Testing)
-* ClickUp (Project Management)
-* Figma (UI/UX Design)
+- Git & GitHub (Version Control)
+- Postman (API Testing)
+- ClickUp (Project Management)
+- Figma (UI/UX Design)
 
 ---
 
@@ -147,11 +147,11 @@ lib/
 
 ## 🔐 Security Features
 
-* JWT-based Authentication
-* Role-Based Access Control (RBAC)
-* Encrypted Passwords (bcrypt)
-* Secure API Middleware
-* Token Storage using Flutter Secure Storage
+- JWT-based Authentication
+- Role-Based Access Control (RBAC)
+- Encrypted Passwords (bcrypt)
+- Secure API Middleware
+- Token Storage using Flutter Secure Storage
 
 ---
 
@@ -169,20 +169,20 @@ lib/
 
 ## 📊 Project Methodology
 
-* Agile Software Development Life Cycle (SDLC)
-* Scrum-based Sprint Planning
-* Object-Oriented Analysis & Design (OOAD)
-* Modular Team-based Development
+- Agile Software Development Life Cycle (SDLC)
+- Scrum-based Sprint Planning
+- Object-Oriented Analysis & Design (OOAD)
+- Modular Team-based Development
 
 ---
 
 ## 📌 Future Improvements
 
-* Live GPS tracking integration
-* Advanced AI chatbot
-* Full LankaQR production integration
-* Government regulatory dashboard
-* Nationwide deployment expansion
+- Live GPS tracking integration
+- Advanced AI chatbot
+- Full LankaQR production integration
+- Government regulatory dashboard
+- Nationwide deployment expansion
 
 ---
 
@@ -197,4 +197,3 @@ University of Westminster
 ## 📜 License
 
 This project was developed for academic purposes.
-
