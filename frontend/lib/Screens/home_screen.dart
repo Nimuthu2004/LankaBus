@@ -105,3 +105,30 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
         ],
       ),
+
+      /// Bottom Navigation Bar
+      bottomNavigationBar: ClipRRect(
+        borderRadius: const BorderRadius.vertical(top: Radius.circular(25)),
+        child: BackdropFilter(
+            filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
+            child: Container(
+                height: 70,
+                decoration: BoxDecoration(
+                 color: Colors.white.withOpacity(0.15),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                         buildNavItem(Icons.home, 0),
+                         buildNavItem(Icons.confirmation_number, 1),
+                         const SizedBox(width: 40), // space for QR button
+                         buildNavItem(Icons.person, 2),
+                         buildNavItem(Icons.settings, 3),
+                        ],
+                ),
+            ),
+        ),
+      ),
+    );
+  }
+  
