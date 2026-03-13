@@ -222,3 +222,80 @@ class _ConductorHomeScreenState extends State<ConductorHomeScreen> {
                   ),
 
                   const Spacer(),
+                   /// Bottom Navigation
+                  Container(
+                    padding: const EdgeInsets.symmetric(vertical: 14),
+                    decoration: BoxDecoration(
+                      color: Colors.white.withOpacity(0.15),
+                      borderRadius: BorderRadius.circular(30),
+                      border: Border.all(color: Colors.white30),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+
+                        /// ChatBot
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    const ConductorChatbotScreen(),
+                              ),
+                            );
+                          },
+                          child: const Icon(
+                            Icons.chat,
+                            color: Colors.white,
+                            size: 28,
+                          ),
+                        ),
+
+                        /// Settings
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    const ConductorSettingsScreen(),
+                              ),
+                            );
+                          },
+                          child: const Icon(
+                            Icons.settings,
+                            color: Colors.white70,
+                            size: 28,
+                          ),
+                        ),
+
+                        /// Profile
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    const ConductorProfileScreen(),
+                              ),
+                            );
+                          },
+                          child: const Icon(
+                            Icons.person,
+                            color: Colors.white70,
+                            size: 28,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
