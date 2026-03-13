@@ -54,3 +54,75 @@ class _ConductorHomeScreenState extends State<ConductorHomeScreen> {
       ),
     );
   }
+   @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Stack(
+        children: [
+
+          /// Background Image
+          Positioned.fill(
+            child: Image.asset(
+              "assets/images/bus_bg.jpg",
+              fit: BoxFit.cover,
+            ),
+          ),
+
+          /// Gradient Overlay
+          Positioned.fill(
+            child: Container(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [
+                    Colors.black.withOpacity(0.65),
+                    Colors.black.withOpacity(0.35),
+                  ],
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                ),
+              ),
+            ),
+          ),
+
+          SafeArea(
+            child: Padding(
+              padding: const EdgeInsets.all(20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+
+                  /// Header
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: const [
+                          Text(
+                            "ND - 1030",
+                            style: TextStyle(
+                              fontSize: 30,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
+                          ),
+                          SizedBox(height: 5),
+                          Text(
+                            "Let’s start the journey 🚍",
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: Colors.white70,
+                            ),
+                          ),
+                        ],
+                      ),
+
+                      const CircleAvatar(
+                        radius: 26,
+                        backgroundImage:
+                            AssetImage("assets/conductor.jpg"),
+                      )
+                    ],
+                  ),
+
+                  const SizedBox(height: 30),
