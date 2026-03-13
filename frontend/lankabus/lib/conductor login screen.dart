@@ -38,4 +38,60 @@ class ConductorLoginScreen extends StatelessWidget {
                   const CustomTextField(hint: "Email or Username"),
                   const CustomTextField(hint: "Password", obscure: true),
                   const SizedBox(height: 10),
-                  
+                   // Forgot Password button
+                  Align(
+                    alignment: Alignment.centerRight,
+                    child: TextButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const ForgotPasswordScreen(),
+                          ),
+                        );
+                      },
+                      child: const Text(
+                        "Forgot Password?",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                  ),
+
+                  const SizedBox(height: 20),
+
+                  CustomButton(
+                    text: "Login",
+                    onPressed: () {
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => ConductorHomeScreen(),
+                        ),
+                      );
+                    },
+                  ),
+                  const SizedBox(height: 10),
+
+                  TextButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => ConductorRegisterScreen(),
+                        ),
+                      );
+                    },
+                    child: const Text(
+                      "Create Account",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
