@@ -186,3 +186,67 @@ class UserHomeScreen extends StatelessWidget {
           ),
         ],
       ),
+
+      /// Bottom Navigation Bar
+      bottomNavigationBar: BottomNavigationBar(
+
+        type: BottomNavigationBarType.fixed,
+        selectedItemColor: const Color(0xFF1E3C72),
+        unselectedItemColor: Colors.grey,
+        showUnselectedLabels: true,
+
+        onTap: (index) {
+
+          /// Chatbot
+          if (index == 0) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (_) => const ChatbotScreen(),
+              ),
+            );
+          }
+
+          /// Settings
+          if (index == 1) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (_) => const SettingsScreen(),
+              ),
+            );
+          }
+
+          /// Profile
+          if (index == 2) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (_) => const ProfileScreen(),
+              ),
+            );
+          }
+
+        },
+
+        items: const [
+
+          BottomNavigationBarItem(
+            icon: Icon(Icons.smart_toy),
+            label: "Chatbot",
+          ),
+
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
+            label: "Settings",
+          ),
+
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: "Profile",
+          ),
+
+        ],
+      ),
+    );
+  }
