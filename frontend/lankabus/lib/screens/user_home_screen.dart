@@ -250,3 +250,62 @@ class UserHomeScreen extends StatelessWidget {
       ),
     );
   }
+  /// Menu Card Widget
+  Widget _buildMenuCard(
+      BuildContext context, String title, IconData icon, Widget screen) {
+
+    return InkWell(
+      borderRadius: BorderRadius.circular(25),
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (_) => screen),
+        );
+      },
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.white.withOpacity(0.18),
+          borderRadius: BorderRadius.circular(25),
+          border: Border.all(color: Colors.white30),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.2),
+              blurRadius: 10,
+              offset: const Offset(0, 6),
+            )
+          ],
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.white.withOpacity(0.3),
+                shape: BoxShape.circle,
+              ),
+              child: Icon(
+                icon,
+                size: 28,
+                color: Colors.white,
+              ),
+            ),
+
+            const SizedBox(height: 15),
+
+            Text(
+              title,
+              style: const TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
+            ),
+
+          ],
+        ),
+      ),
+    );
+  }
+}
