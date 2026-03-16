@@ -8,7 +8,7 @@ class LoginTypeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-      return Scaffold(
+    return Scaffold(
       body: Container(
         padding: const EdgeInsets.all(20),
         decoration: const BoxDecoration(
@@ -23,11 +23,7 @@ class LoginTypeScreen extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               // Logo Image
-              Image.asset(
-                'assets/images/logo.png',
-                width: 120,
-                height: 120,
-              ),
+              Image.asset('assets/images/logo.png', width: 120, height: 120),
               const SizedBox(height: 20),
 
               // App Title
@@ -40,16 +36,31 @@ class LoginTypeScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 50),
-  
-          
-             )
-          )
-        )
-      )
-  
-     
 
-    
-   }
+              // Buttons
+              CustomButton(
+                text: "User",
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => UserLoginScreen()),
+                  );
+                },
+              ),
+              const SizedBox(height: 20),
+              CustomButton(
+                text: "Conductor",
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => ConductorLoginScreen()),
+                  );
+                },
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
   }
-
+}
