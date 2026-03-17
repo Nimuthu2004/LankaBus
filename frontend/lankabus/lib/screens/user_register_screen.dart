@@ -35,3 +35,95 @@ class _UserRegisterScreenState extends State<UserRegisterScreen> {
           key: _formKey,
           child: Column(
             children: [
+
+                /// Full Name
+              _buildTextField(
+                controller: fullNameController,
+                label: "Full Name",
+                icon: Icons.person,
+              ),
+
+              const SizedBox(height: 15),
+
+              /// Last Name
+              _buildTextField(
+                controller: lastNameController,
+                label: "Last Name",
+                icon: Icons.person_outline,
+              ),
+
+              const SizedBox(height: 15),
+
+              /// Phone Number
+              _buildTextField(
+                controller: phoneController,
+                label: "Phone Number",
+                icon: Icons.phone,
+                keyboardType: TextInputType.phone,
+              ),
+
+              const SizedBox(height: 15),
+
+              /// Email
+              _buildTextField(
+                controller: emailController,
+                label: "Email",
+                icon: Icons.email,
+                keyboardType: TextInputType.emailAddress,
+              ),
+
+              const SizedBox(height: 15),
+
+              /// Password
+              _buildTextField(
+                controller: passwordController,
+                label: "Password",
+                icon: Icons.lock,
+                isPassword: true,
+                obscureText: obscurePassword,
+                togglePassword: () {
+                  setState(() {
+                    obscurePassword = !obscurePassword;
+                  });
+                },
+              ),
+
+              const SizedBox(height: 15),
+
+              /// Confirm Password
+              _buildTextField(
+                controller: confirmPasswordController,
+                label: "Confirm Password",
+                icon: Icons.lock_outline,
+                isPassword: true,
+                obscureText: obscureConfirmPassword,
+                togglePassword: () {
+                  setState(() {
+                    obscureConfirmPassword = !obscureConfirmPassword;
+                  });
+                },
+              ),
+
+              const SizedBox(height: 20),
+
+              /// Terms & Conditions
+              Row(
+                children: [
+                  Checkbox(
+                    value: agreeTerms,
+                    onChanged: (value) {
+                      setState(() {
+                        agreeTerms = value!;
+                      });
+                    },
+                  ),
+                  const Expanded(
+                    child: Text(
+                      "I agree to the Terms & Conditions",
+                      style: TextStyle(fontSize: 14),
+                    ),
+                  )
+                ],
+              ),
+
+              const SizedBox(height: 20),
