@@ -40,3 +40,22 @@ class _ConductorSettingsScreenState extends State<ConductorSettingsScreen> {
               });
             },
           ),
+          ListTile(
+            leading: const Icon(Icons.info),
+            title: const Text("App Version"),
+            subtitle: const Text("1.0.0"),
+          ),
+
+          ListTile(
+            leading: const Icon(Icons.logout),
+            title: const Text("Logout"),
+            onTap: () {
+              Navigator.pop(context);
+            },
+          )
+
+        ],
+      ),
+    );
+  }
+}
