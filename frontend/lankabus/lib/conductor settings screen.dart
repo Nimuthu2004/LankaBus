@@ -11,3 +11,32 @@ class _ConductorSettingsScreenState extends State<ConductorSettingsScreen> {
 
   bool darkMode = false;
   bool notifications = true;
+  
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Settings"),
+      ),
+      body: ListView(
+        children: [
+
+          SwitchListTile(
+            title: const Text("Dark Mode"),
+            value: darkMode,
+            onChanged: (value) {
+              setState(() {
+                darkMode = value;
+              });
+            },
+          ),
+
+          SwitchListTile(
+            title: const Text("Notifications"),
+            value: notifications,
+            onChanged: (value) {
+              setState(() {
+                notifications = value;
+              });
+            },
+          ),
