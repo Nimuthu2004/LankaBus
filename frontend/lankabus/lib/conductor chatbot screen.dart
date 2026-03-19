@@ -21,3 +21,54 @@ class _ConductorChatbotScreenState extends State<ConductorChatbotScreen> {
 
     controller.clear();
   }
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Conductor ChatBot"),
+      ),
+      body: Column(
+        children: [
+
+          Expanded(
+            child: ListView.builder(
+              itemCount: messages.length,
+              itemBuilder: (context, index) {
+                return ListTile(
+                  title: Text(messages[index]),
+                );
+              },
+            ),
+          ),
+
+          Padding(
+            padding: const EdgeInsets.all(10),
+            child: Row(
+              children: [
+
+                Expanded(
+                  child: TextField(
+                    controller: controller,
+                    decoration: const InputDecoration(
+                      hintText: "Ask something...",
+                      border: OutlineInputBorder(),
+                    ),
+                  ),
+                ),
+
+                const SizedBox(width: 10),
+
+                IconButton(
+                  icon: const Icon(Icons.send),
+                  onPressed: sendMessage,
+                )
+
+              ],
+            ),
+          )
+
+        ],
+      ),
+    );
+  }
+}
