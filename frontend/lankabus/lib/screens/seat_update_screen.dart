@@ -56,4 +56,50 @@ class _SeatUpdateScreenState extends State<SeatUpdateScreen> {
       ),
     );
   }
+ @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Seat Update"),
+        backgroundColor: Colors.blueGrey[900],
+        centerTitle: true,
+      ),
+
+      body: Column(
+        children: [
+
+          const SizedBox(height: 20),
+
+          const Text(
+            "Bus Seat Layout",
+            style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+          ),
+
+          const SizedBox(height: 20),
+
+          Expanded(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+
+                seatRow(0,1,2,3),
+                seatRow(4,5,6,7),
+                seatRow(8,9,10,11),
+                seatRow(12,13,14,15),
+                seatRow(16,17,18,19),
+
+              ],
+            ),
+          ),
+        ]
+      )
+
+     
+     
+    )
+  }
+
+
+
+
 }
