@@ -190,3 +190,47 @@ class _WalletScreenState extends State<WalletScreen> {
       },
     );
   }
+
+  /// ENTER AMOUNT
+  void openAmountDialog(String method) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: Text("Recharge using $method"),
+          content: TextField(
+            controller: amountController,
+            keyboardType: TextInputType.number,
+            decoration: const InputDecoration(
+              hintText: "Enter Amount",
+            ),
+          ),
+          actions: [
+
+            TextButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: const Text("Cancel"),
+            ),
+
+            ElevatedButton(
+              onPressed: () {
+                double amount = double.tryParse(amountController.text) ?? 0;
+
+                if (amount > 0) {
+                  addMoney(amount);
+                }
+
+                amountController.clear();
+
+                Navigator.pop(context);
+              },
+              child: const Text("Pay"),
+            )
+          ],
+        );
+      },
+    );
+  }
+}
