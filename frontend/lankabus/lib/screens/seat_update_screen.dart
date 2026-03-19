@@ -36,4 +36,24 @@ class _SeatUpdateScreenState extends State<SeatUpdateScreen> {
       ),
     );
   }
+
+  Widget seatRow(int a, int b, int c, int d) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          buildSeat(a),
+          const SizedBox(width: 10),
+          buildSeat(b),
+
+          const SizedBox(width: 35), // aisle gap
+
+          buildSeat(c),
+          const SizedBox(width: 10),
+          buildSeat(d),
+        ],
+      ),
+    );
+  }
 }
