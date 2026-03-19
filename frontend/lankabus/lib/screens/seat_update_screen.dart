@@ -56,7 +56,8 @@ class _SeatUpdateScreenState extends State<SeatUpdateScreen> {
       ),
     );
   }
- @override
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -67,7 +68,6 @@ class _SeatUpdateScreenState extends State<SeatUpdateScreen> {
 
       body: Column(
         children: [
-
           const SizedBox(height: 20),
 
           const Text(
@@ -81,25 +81,32 @@ class _SeatUpdateScreenState extends State<SeatUpdateScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-
-                seatRow(0,1,2,3),
-                seatRow(4,5,6,7),
-                seatRow(8,9,10,11),
-                seatRow(12,13,14,15),
-                seatRow(16,17,18,19),
-
+                seatRow(0, 1, 2, 3),
+                seatRow(4, 5, 6, 7),
+                seatRow(8, 9, 10, 11),
+                seatRow(12, 13, 14, 15),
+                seatRow(16, 17, 18, 19),
               ],
             ),
           ),
-        ]
-      )
 
-     
-     
-    )
+          Padding(
+            padding: const EdgeInsets.all(16),
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.blueGrey[900],
+                minimumSize: const Size(double.infinity, 50),
+              ),
+              onPressed: () {
+                ScaffoldMessenger.of(
+                  context,
+                ).showSnackBar(const SnackBar(content: Text("Seats Updated")));
+              },
+              child: const Text("Update Seats"),
+            ),
+          ),
+        ],
+      ),
+    );
   }
-
-
-
-
 }
