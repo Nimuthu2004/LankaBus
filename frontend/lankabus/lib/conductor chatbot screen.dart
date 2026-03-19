@@ -11,3 +11,13 @@ class _ConductorChatbotScreenState extends State<ConductorChatbotScreen> {
 
   final TextEditingController controller = TextEditingController();
   List<String> messages = [];
+  void sendMessage() {
+    if (controller.text.isEmpty) return;
+
+    setState(() {
+      messages.add("You: ${controller.text}");
+      messages.add("Bot: Ticket system assistant ready.");
+    });
+
+    controller.clear();
+  }
