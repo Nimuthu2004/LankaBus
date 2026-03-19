@@ -93,3 +93,48 @@ class _WalletScreenState extends State<WalletScreen> {
             ),
 
             const SizedBox(height: 30),
+
+            /// HISTORY TITLE
+            const Align(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                "Wallet History",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 15),
+
+            /// HISTORY LIST
+            history.isEmpty
+                ? const Text(
+                    "No transactions yet",
+                    style: TextStyle(color: Colors.white70),
+                  )
+                : ListView.builder(
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemCount: history.length,
+                    itemBuilder: (context, index) {
+                      return Card(
+                        color: Colors.white10,
+                        child: ListTile(
+                          leading: const Icon(Icons.account_balance_wallet,
+                              color: Colors.green),
+                          title: Text(
+                            history[index],
+                            style: const TextStyle(color: Colors.white),
+                          ),
+                        ),
+                      );
+                    },
+                  )
+          ],
+        ),
+      ),
+    );
+  }
