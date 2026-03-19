@@ -138,3 +138,40 @@ class _WalletScreenState extends State<WalletScreen> {
       ),
     );
   }
+
+  /// OPEN RECHARGE OPTIONS
+  void openRecharge() {
+    showModalBottomSheet(
+      context: context,
+      backgroundColor: Colors.grey[900],
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(25)),
+      ),
+      builder: (context) {
+        return Padding(
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+
+              const Text(
+                "Select Payment Method",
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold),
+              ),
+
+              const SizedBox(height: 20),
+
+              paymentOption(Icons.phone_android, "Ez Cash"),
+              paymentOption(Icons.credit_card, "Card"),
+              paymentOption(Icons.account_balance, "Lanka Pay"),
+
+              const SizedBox(height: 20)
+            ],
+          ),
+        );
+      },
+    );
+  }
