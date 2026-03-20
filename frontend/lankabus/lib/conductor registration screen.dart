@@ -34,3 +34,16 @@ class _ConductorRegisterScreenState extends State<ConductorRegisterScreen> {
     "Negombo - Kurunegala",
     "Colombo - Anuradhapura"
   ];
+    /// IMAGE PICKER
+  File? driverImage;
+  final ImagePicker picker = ImagePicker();
+
+  Future<void> pickImage() async {
+    final picked = await picker.pickImage(source: ImageSource.gallery);
+
+    if (picked != null) {
+      setState(() {
+        driverImage = File(picked.path);
+      });
+    }
+  }
