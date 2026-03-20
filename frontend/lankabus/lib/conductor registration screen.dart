@@ -47,3 +47,15 @@ class _ConductorRegisterScreenState extends State<ConductorRegisterScreen> {
       });
     }
   }
+   @override
+  void dispose() {
+    busRegController.dispose();
+    companyController.dispose();
+    ntcController.dispose();
+    conductorNameController.dispose();
+    driverNameController.dispose();
+    mobileController.dispose();
+    passwordController.dispose();
+    confirmPasswordController.dispose();
+    super.dispose();
+  }
