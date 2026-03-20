@@ -24,3 +24,13 @@ class _ConductorRegisterScreenState extends State<ConductorRegisterScreen> {
   bool agreeTerms = false;
   bool obscurePassword = true;
   bool obscureConfirmPassword = true;
+  /// ROUTE DROPDOWN
+  String? selectedRoute;
+
+  final List<String> routes = [
+    "Colombo - Negombo",
+    "Colombo - Kandy",
+    "Colombo - Galle",
+    "Negombo - Kurunegala",
+    "Colombo - Anuradhapura"
+  ];
