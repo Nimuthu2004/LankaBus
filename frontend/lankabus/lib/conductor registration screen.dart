@@ -9,3 +9,18 @@ class ConductorRegisterScreen extends StatefulWidget {
   State<ConductorRegisterScreen> createState() =>
       _ConductorRegisterScreenState();
 }
+class _ConductorRegisterScreenState extends State<ConductorRegisterScreen> {
+  final _formKey = GlobalKey<FormState>();
+
+  final TextEditingController busRegController = TextEditingController();
+  final TextEditingController companyController = TextEditingController();
+  final TextEditingController ntcController = TextEditingController();
+  final TextEditingController conductorNameController = TextEditingController();
+  final TextEditingController driverNameController = TextEditingController();
+  final TextEditingController mobileController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController confirmPasswordController = TextEditingController();
+
+  bool agreeTerms = false;
+  bool obscurePassword = true;
+  bool obscureConfirmPassword = true;
