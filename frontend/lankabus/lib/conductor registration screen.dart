@@ -59,3 +59,47 @@ class _ConductorRegisterScreenState extends State<ConductorRegisterScreen> {
     confirmPasswordController.dispose();
     super.dispose();
   }
+   @override
+  Widget build(BuildContext context) {
+
+    return Scaffold(
+      body: Container(
+        padding: const EdgeInsets.all(20),
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            colors: [Color(0xFF1E3C72), Color(0xFF2A5298)],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+          ),
+        ),
+
+        child: SafeArea(
+          child: Column(
+            children: [
+
+              /// BACK BUTTON
+              Align(
+                alignment: Alignment.topLeft,
+                child: IconButton(
+                  icon: const Icon(Icons.arrow_back,color: Colors.white),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                ),
+              ),
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Form(
+                    key: _formKey,
+                    child: Column(
+                      children: [
+
+                        const Text(
+                          "Conductor Registration",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 22,
+                              fontWeight: FontWeight.bold),
+                        ),
+
+                        const SizedBox(height: 25),
