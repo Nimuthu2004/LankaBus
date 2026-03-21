@@ -12,3 +12,35 @@ class ChatbotScreen extends StatelessWidget {
       ),
       body: Column(
         children: [
+
+            Expanded(
+            child: ListView(
+              padding: const EdgeInsets.all(20),
+              children: const [
+
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: ChatBubble(
+                    text: "Hello 👋 How can I help you?",
+                    isBot: true,
+                  ),
+                ),
+
+                Align(
+                  alignment: Alignment.centerRight,
+                  child: ChatBubble(
+                    text: "How to buy bus ticket?",
+                    isBot: false,
+                  ),
+                ),
+
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: ChatBubble(
+                    text: "Go to Bus Tickets menu and select route.",
+                    isBot: true,
+                  ),
+                ),
+              ],
+            ),
+          ),
