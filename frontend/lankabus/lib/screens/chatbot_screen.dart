@@ -44,3 +44,40 @@ class ChatbotScreen extends StatelessWidget {
               ],
             ),
           ),
+
+           /// Message Box
+          Container(
+            padding: const EdgeInsets.all(10),
+            child: Row(
+              children: [
+
+                Expanded(
+                  child: TextField(
+                    decoration: InputDecoration(
+                      hintText: "Ask something...",
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                    ),
+                  ),
+                ),
+
+                const SizedBox(width: 10),
+
+                CircleAvatar(
+                  backgroundColor: const Color(0xFF1E3C72),
+                  child: IconButton(
+                    icon: const Icon(Icons.send, color: Colors.white),
+                    onPressed: () {},
+                  ),
+                )
+
+              ],
+            ),
+          )
+
+        ],
+      ),
+    );
+  }
+}
