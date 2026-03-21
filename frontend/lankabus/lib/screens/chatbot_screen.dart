@@ -81,3 +81,28 @@ class ChatbotScreen extends StatelessWidget {
     );
   }
 }
+
+class ChatBubble extends StatelessWidget {
+  final String text;
+  final bool isBot;
+
+  const ChatBubble({super.key, required this.text, required this.isBot});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.symmetric(vertical: 8),
+      padding: const EdgeInsets.all(12),
+      decoration: BoxDecoration(
+        color: isBot ? Colors.grey.shade300 : const Color(0xFF1E3C72),
+        borderRadius: BorderRadius.circular(15),
+      ),
+      child: Text(
+        text,
+        style: TextStyle(
+          color: isBot ? Colors.black : Colors.white,
+        ),
+      ),
+    );
+  }
+}
