@@ -10,7 +10,13 @@ class ScanQRScreen extends StatelessWidget {
         title: const Text("Scan QR Code"),
         backgroundColor: Colors.blueGrey[900],
       ),
-     )
-   }
+
+      body: const Center(
+        child: Text(
+          "This is the Scan QR Code screen",
+          style: TextStyle(fontSize: 20),
+        ),
+      ),
+    );
   }
-  
+}
