@@ -105,3 +105,38 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
         showSnack("OTP Resent");
     }
     
+    /// ================= RESET PASSWORD =================
+    void resetPassword() {
+
+        final newPass = newPassController.text.trim();
+        final confirmPass = confirmPassController.text.trim();
+
+        if (newPass.isEmpty || confirmPass.isEmpty) {
+            showSnack("Please fill all fields");
+            return;
+        }
+
+        if (!isStrongPassword(newPass)) {
+            showSnack("Password must contain uppercase, number & special character");
+            return;
+        }
+
+        if (newPass != confirmPass) {
+            showSnack("Passwords do not match");
+            return;
+        }
+
+        showSnack("Password reset successful");
+
+        Navigator.pop(context);
+    }
+
+    bool isStrongPassword(String password) {
+        final regex = RegExp(r'^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$&*~]).{6,}$');
+        return regex.hasMatch(password);
+    }
+
+    void showSnack(String message) {
+    ScaffoldMessenger.of(context)
+        .showSnackBar(SnackBar(content: Text(message)));
+  }
