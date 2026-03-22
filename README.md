@@ -44,6 +44,14 @@ Station_Code (int8): Unique numeric code.
 - Multi-language Support (Sinhala / Tamil / English)
 - Push Notifications
 
+- User Registration & Login (JWT Authentication)
+- Route Search & Selection
+- Real-time Seat Reservation
+- QR-based Digital Ticket Generation
+- Multi-payment Support (LankaQR, Wallet, Card – simulated)
+- Booking History
+- Multi-language Support (Sinhala / Tamil / English)
+- Push Notifications
 2. Fares
 Contains the pricing logic for specific journeys.
 
@@ -53,6 +61,10 @@ id (int8): Primary Key.
 - Offline Ticket Verification
 - Daily Trip Summary
 
+- Secure Login
+- QR Code Ticket Validation
+- Offline Ticket Verification
+- Daily Trip Summary
 start_station_id (int8): Foreign Key to Stations.id.
 
 end_station_id (int8): Foreign Key to Stations.id.
@@ -62,6 +74,11 @@ end_station_id (int8): Foreign Key to Stations.id.
 - Operational Reports
 - Data Analytics
 
+- Revenue Analytics
+- Route & Bus Management
+- Complaint Management System
+- Operational Reports
+- Data Analytics
 amount (float8): The ticket price for this specific route.
 
 🚦 Getting Started
