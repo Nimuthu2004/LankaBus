@@ -32,4 +32,22 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
 
     int seconds = 60;
     bool isTimerRunning = false;
-        
+    
+    @override
+    void dispose() {
+        emailController.dispose();
+
+        for (var c in otpControllers) {
+            c.dispose();
+        }
+
+        for (var f in otpFocusNodes) {
+            f.dispose();
+        }
+
+        newPassController.dispose();
+        confirmPassController.dispose();
+
+        super.dispose();
+    }
+    
