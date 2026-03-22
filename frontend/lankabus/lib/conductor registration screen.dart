@@ -158,3 +158,27 @@ class _ConductorRegisterScreenState extends State<ConductorRegisterScreen> {
                         ),
 
                         const SizedBox(height: 10),
+
+                         /// TERMS
+                        Row(
+                          children: [
+                            Checkbox(
+                              value: agreeTerms,
+                              activeColor: Colors.white,
+                              checkColor: Colors.blue,
+                              onChanged: (value) {
+                                setState(() {
+                                  agreeTerms = value!;
+                                });
+                              },
+                            ),
+                            const Expanded(
+                              child: Text(
+                                "I agree to the Terms & Conditions",
+                                style: TextStyle(color: Colors.white),
+                              ),
+                            ),
+                          ],
+                        ),
+
+                        const SizedBox(height: 10),
