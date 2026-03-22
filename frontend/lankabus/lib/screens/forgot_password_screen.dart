@@ -140,3 +140,69 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
     ScaffoldMessenger.of(context)
         .showSnackBar(SnackBar(content: Text(message)));
   }
+
+  /// ================= OTP BOXES =================
+  Widget buildOTPBoxes() {
+
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: List.generate(4, (index) {
+
+        return SizedBox(
+          width: 60,
+          child: TextField(
+            controller: otpControllers[index],
+            focusNode: otpFocusNodes[index],
+            keyboardType: TextInputType.number,
+            textAlign: TextAlign.center,
+            maxLength: 1,
+
+            inputFormatters: [
+              FilteringTextInputFormatter.digitsOnly,
+            ],
+
+            style: const TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold),
+
+            decoration: InputDecoration(
+              counterText: "",
+              filled: true,
+              fillColor: Colors.white,
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
+            ),
+
+            onChanged: (value) {
+
+              /// AUTO PASTE OTP
+              if (value.length > 1) {
+
+                for (int i = 0; i < 4; i++) {
+                  if (i < value.length) {
+                    otpControllers[i].text = value[i];
+                  }
+                }
+
+                FocusScope.of(context).unfocus();
+                return;
+              }
+
+              /// AUTO MOVE NEXT
+              if (value.isNotEmpty && index < 3) {
+                otpFocusNodes[index + 1].requestFocus();
+              }
+
+              /// MOVE BACK WHEN DELETE
+              if (value.isEmpty && index > 0) {
+                otpFocusNodes[index - 1].requestFocus();
+              }
+            },
+          ),
+        );
+      }),
+    );
+  }
+
+  
