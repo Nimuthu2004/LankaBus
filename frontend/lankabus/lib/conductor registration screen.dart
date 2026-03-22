@@ -265,3 +265,33 @@ class _ConductorRegisterScreenState extends State<ConductorRegisterScreen> {
       ),
     );
   }
+  
+  /// ROUTE DROPDOWN
+  Widget _buildRouteDropdown() {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 15),
+      child: DropdownButtonFormField<String>(
+        value: selectedRoute,
+        decoration: InputDecoration(
+          filled: true,
+          fillColor: Colors.white,
+          hintText: "Select Route",
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(12),
+          ),
+        ),
+        items: routes.map((route) {
+          return DropdownMenuItem(
+            value: route,
+            child: Text(route),
+          );
+        }).toList(),
+        onChanged: (value) {
+          setState(() {
+            selectedRoute = value;
+          });
+        },
+      ),
+    );
+  }
+
