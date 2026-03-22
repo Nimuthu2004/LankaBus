@@ -103,3 +103,58 @@ class _ConductorRegisterScreenState extends State<ConductorRegisterScreen> {
                         ),
 
                         const SizedBox(height: 25),
+
+                        /// PHOTO UPLOAD
+                        GestureDetector(
+                          onTap: pickImage,
+                          child: CircleAvatar(
+                            radius: 50,
+                            backgroundColor: Colors.white,
+                            backgroundImage:
+                                driverImage != null ? FileImage(driverImage!) : null,
+                            child: driverImage == null
+                                ? const Icon(Icons.camera_alt,size: 40)
+                                : null,
+                          ),
+                        ),
+
+                        const SizedBox(height: 20),
+
+                        _buildField(busRegController, "Bus Registration Number"),
+                        _buildField(companyController, "Company Name"),
+
+                        _buildRouteDropdown(),
+
+                        _buildField(ntcController, "NTC Registration Number"),
+                        _buildField(conductorNameController, "Conductor Name"),
+                        _buildField(driverNameController, "Driver Name"),
+
+                        _buildField(
+                          mobileController,
+                          "Mobile Number",
+                          keyboardType: TextInputType.phone,
+                        ),
+                         _buildPasswordField(
+                          controller: passwordController,
+                          hint: "Password",
+                          obscureText: obscurePassword,
+                          toggle: () {
+                            setState(() {
+                              obscurePassword = !obscurePassword;
+                            });
+                          },
+                        ),
+
+                        _buildPasswordField(
+                          controller: confirmPasswordController,
+                          hint: "Confirm Password",
+                          obscureText: obscureConfirmPassword,
+                          toggle: () {
+                            setState(() {
+                              obscureConfirmPassword =
+                                  !obscureConfirmPassword;
+                            });
+                          },
+                        ),
+
+                        const SizedBox(height: 10),
