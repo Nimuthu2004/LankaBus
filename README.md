@@ -1,33 +1,40 @@
-# 🚌 LankaBus – Real-Time E-Ticketing System for Highway Buses
+🎫 Ticketing System Backend
+A robust Node.js & Express backend service for a real-time ticketing platform. This system processes user travel routes (Origin to Destination) and retrieves dynamic fare data from a PostgreSQL database.
 
-## 📌 Project Overview
+🚀 Features
+Route Lookup: Resolves human-readable station names (e.g., "Galle") to unique IDs.
 
-**LankaBus** is a real-time digital e-ticketing and seat reservation system designed to modernize the manual ticketing process used in Sri Lanka’s highway bus transportation sector.
+Fare Calculation: Queries a relational database to fetch specific fares between two points.
 
-The system enables passengers to book seats, make digital payments, and receive QR-based e-tickets through a mobile application. Conductors can validate tickets using a QR scanner, while administrators can monitor revenue, analytics, and operational performance through a dashboard.
+Real-Time Ready: Optimized for low-latency responses using indexed database lookups.
 
-This project was developed as part of the Software Engineering coursework at the Informatics Institute of Technology (IIT), in collaboration with the University of Westminster, UK.
+Error Handling: Validates inputs and provides clear feedback for missing routes or locations.
 
----
+🛠️ Tech Stack
+Runtime: Node.js
 
-## 🎯 Problem Statement
+Framework: Express.js
 
-Sri Lanka’s highway buses currently rely on manual, cash-based ticketing systems which cause:
+Database: PostgreSQL (Supabase)
 
+Querying: [State your method here, e.g., @supabase/supabase-js or pg driver]
 - Revenue leakage
 - Passenger inconvenience
 - Lack of real-time seat availability
 - No digital payment options
 - Poor operational transparency
 
-LankaBus provides a fully digital solution to eliminate these inefficiencies.
+📂 Database Schema
+The backend interacts with two primary tables in the public schema:
 
----
+1. Stations
+Maps locations to unique identifiers.
 
-## 🚀 Key Features
+id (int8): Primary Key.
 
-### 👤 Passenger Mobile App
+Name (text): The station name (e.g., "Makumbura").
 
+Station_Code (int8): Unique numeric code.
 - User Registration & Login (JWT Authentication)
 - Route Search & Selection
 - Real-time Seat Reservation
@@ -37,23 +44,31 @@ LankaBus provides a fully digital solution to eliminate these inefficiencies.
 - Multi-language Support (Sinhala / Tamil / English)
 - Push Notifications
 
-### 🎫 Conductor App
+2. Fares
+Contains the pricing logic for specific journeys.
 
+id (int8): Primary Key.
 - Secure Login
 - QR Code Ticket Validation
 - Offline Ticket Verification
 - Daily Trip Summary
 
-### 🖥 Admin Dashboard
+start_station_id (int8): Foreign Key to Stations.id.
 
+end_station_id (int8): Foreign Key to Stations.id.
 - Revenue Analytics
 - Route & Bus Management
 - Complaint Management System
 - Operational Reports
 - Data Analytics
 
-### 🤖 AI & Smart Services
+amount (float8): The ticket price for this specific route.
 
+🚦 Getting Started
+Prerequisites
+Node.js (v18+ recommended)
+
+A Supabase project or PostgreSQL instance
 - AI-based Complaint Assistant
 - Real-time GPS Tracking
 - Firebase Push Notifications
