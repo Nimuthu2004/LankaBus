@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">LankaBus</string>
+    <string name="title_activity_main">LankaBus</string>
+    <string name="package_name">com.lankabus.app</string>
+    <string name="custom_url_scheme">com.lankabus.app</string>
+</resources>
