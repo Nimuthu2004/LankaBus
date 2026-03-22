@@ -238,4 +238,30 @@ class _ConductorRegisterScreenState extends State<ConductorRegisterScreen> {
       ),
     );
   }
-  
+   
+   /// TEXT FIELD
+  Widget _buildField(TextEditingController controller,String hint,
+      {TextInputType keyboardType = TextInputType.text}) {
+
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 15),
+      child: TextFormField(
+        controller: controller,
+        keyboardType: keyboardType,
+        validator: (value) {
+          if (value == null || value.isEmpty) {
+            return "Please enter $hint";
+          }
+          return null;
+        },
+        decoration: InputDecoration(
+          filled: true,
+          fillColor: Colors.white,
+          hintText: hint,
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(12),
+          ),
+        ),
+      ),
+    );
+  }
