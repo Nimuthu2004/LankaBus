@@ -66,3 +66,21 @@ build/
 # Misc
 .cache/
 .temp/
+node_modules/
+frontend/node_modules/
+
+build/
+dist/
+
+android/.gradle/
+android/build/
+android/app/build/
+
+frontend/android/build/
+frontend/android/app/build/
+
+.gradle/
+
+*.dex
+
+.idea
