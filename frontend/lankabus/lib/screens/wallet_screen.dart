@@ -1,0 +1,236 @@
+import 'dart:ui';
+import 'package:flutter/material.dart';
+
+class WalletScreen extends StatefulWidget {
+  const WalletScreen({super.key});
+
+  @override
+  State<WalletScreen> createState() => _WalletScreenState();
+}
+
+class _WalletScreenState extends State<WalletScreen> {
+
+  double balance = 0;
+  final TextEditingController amountController = TextEditingController();
+  List<String> history = [];
+
+  void addMoney(double amount) {
+    setState(() {
+      balance += amount;
+      history.insert(0, "Recharge Rs. $amount");
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: const Color(0xFF0F2027),
+
+      appBar: AppBar(
+        title: const Text("Wallet"),
+        centerTitle: true,
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+      ),
+
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          children: [
+
+            /// GLASS WALLET CARD
+            ClipRRect(
+              borderRadius: BorderRadius.circular(25),
+              child: BackdropFilter(
+                filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
+                child: Container(
+                  width: double.infinity,
+                  padding: const EdgeInsets.all(25),
+                  decoration: BoxDecoration(
+                    color: Colors.white.withOpacity(0.15),
+                    borderRadius: BorderRadius.circular(25),
+                    border: Border.all(color: Colors.white30),
+                  ),
+                  child: Column(
+                    children: [
+
+                      const Text(
+                        "Current Balance",
+                        style: TextStyle(
+                          color: Colors.white70,
+                          fontSize: 18,
+                        ),
+                      ),
+
+                      const SizedBox(height: 10),
+
+                      Text(
+                        "Rs. ${balance.toStringAsFixed(2)}",
+                        style: const TextStyle(
+                          fontSize: 32,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+
+                      const SizedBox(height: 20),
+
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.white,
+                          foregroundColor: Colors.black,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+                        ),
+                        onPressed: openRecharge,
+                        child: const Text("Recharge"),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 30),
+
+            /// HISTORY TITLE
+            const Align(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                "Wallet History",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 15),
+
+            /// HISTORY LIST
+            history.isEmpty
+                ? const Text(
+                    "No transactions yet",
+                    style: TextStyle(color: Colors.white70),
+                  )
+                : ListView.builder(
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemCount: history.length,
+                    itemBuilder: (context, index) {
+                      return Card(
+                        color: Colors.white10,
+                        child: ListTile(
+                          leading: const Icon(Icons.account_balance_wallet,
+                              color: Colors.green),
+                          title: Text(
+                            history[index],
+                            style: const TextStyle(color: Colors.white),
+                          ),
+                        ),
+                      );
+                    },
+                  )
+          ],
+        ),
+      ),
+    );
+  }
+
+  /// OPEN RECHARGE OPTIONS
+  void openRecharge() {
+    showModalBottomSheet(
+      context: context,
+      backgroundColor: Colors.grey[900],
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(25)),
+      ),
+      builder: (context) {
+        return Padding(
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+
+              const Text(
+                "Select Payment Method",
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold),
+              ),
+
+              const SizedBox(height: 20),
+
+              paymentOption(Icons.phone_android, "Ez Cash"),
+              paymentOption(Icons.credit_card, "Card"),
+              paymentOption(Icons.account_balance, "Lanka Pay"),
+
+              const SizedBox(height: 20)
+            ],
+          ),
+        );
+      },
+    );
+  }
+
+  Widget paymentOption(IconData icon, String title) {
+    return ListTile(
+      leading: Icon(icon, color: Colors.white),
+      title: Text(
+        title,
+        style: const TextStyle(color: Colors.white),
+      ),
+      trailing: const Icon(Icons.arrow_forward_ios, color: Colors.white),
+      onTap: () {
+        Navigator.pop(context);
+        openAmountDialog(title);
+      },
+    );
+  }
+
+  /// ENTER AMOUNT
+  void openAmountDialog(String method) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: Text("Recharge using $method"),
+          content: TextField(
+            controller: amountController,
+            keyboardType: TextInputType.number,
+            decoration: const InputDecoration(
+              hintText: "Enter Amount",
+            ),
+          ),
+          actions: [
+
+            TextButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: const Text("Cancel"),
+            ),
+
+            ElevatedButton(
+              onPressed: () {
+                double amount = double.tryParse(amountController.text) ?? 0;
+
+                if (amount > 0) {
+                  addMoney(amount);
+                }
+
+                amountController.clear();
+
+                Navigator.pop(context);
+              },
+              child: const Text("Pay"),
+            )
+          ],
+        );
+      },
+    );
+  }
+}
