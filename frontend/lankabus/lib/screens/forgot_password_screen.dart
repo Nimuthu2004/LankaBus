@@ -11,3 +11,25 @@ class ForgotPasswordScreen extends StatefulWidget {
   @override
   State<ForgotPasswordScreen> createState() => _ForgotPasswordScreenState();
 }
+
+class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
+
+    ResetStep currentStep = ResetStep.enterEmail;
+
+    final TextEditingController emailController = TextEditingController();
+
+    final List<TextEditingController> otpControllers =
+        List.generate(4, (_) => TextEditingController());
+
+    final List<FocusNode> otpFocusNodes =
+        List.generate(4, (_) => FocusNode());
+    
+    final TextEditingController newPassController = TextEditingController();
+    final TextEditingController confirmPassController = TextEditingController();
+
+    bool showNewPassword = false;
+    bool showConfirmPassword = false;
+
+    int seconds = 60;
+    bool isTimerRunning = false;
+        
