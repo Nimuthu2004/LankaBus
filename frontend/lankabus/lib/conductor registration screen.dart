@@ -295,3 +295,40 @@ class _ConductorRegisterScreenState extends State<ConductorRegisterScreen> {
     );
   }
 
+  /// PASSWORD FIELD
+  Widget _buildPasswordField({
+    required TextEditingController controller,
+    required String hint,
+    required bool obscureText,
+    required VoidCallback toggle,
+  }) {
+
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 15),
+      child: TextFormField(
+        controller: controller,
+        obscureText: obscureText,
+        validator: (value) {
+          if (value == null || value.isEmpty) {
+            return "Please enter $hint";
+          }
+          return null;
+        },
+        decoration: InputDecoration(
+          filled: true,
+          fillColor: Colors.white,
+          hintText: hint,
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(12),
+          ),
+          suffixIcon: IconButton(
+            icon: Icon(
+                obscureText ? Icons.visibility_off : Icons.visibility),
+            onPressed: toggle,
+          ),
+        ),
+      ),
+    );
+  }
+}
+
