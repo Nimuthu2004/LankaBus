@@ -51,3 +51,35 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
         super.dispose();
     }
     
+    /// ================= SEND OTP =================
+    void sendOTP() {
+        final input = emailController.text.trim();
+
+        if (input.isEmpty) {
+            showSnack("Please enter email or phone number");
+            return;
+        }
+
+        setState(() {
+            currentStep = ResetStep.enterOTP;
+            startTimer();
+        });
+
+        showSnack("OTP sent to $input");
+    }
+
+    /// ================= VERIFY OTP =================
+    void verifyOTP() {
+        String otp = otpControllers.map((e) => e.text).join();
+
+        if (otp.length != 4) {
+            showSnack("Enter complete 4 digit OTP");
+            return;
+        }
+
+        setState(() {
+            currentStep = ResetStep.resetPassword;
+        });
+    }
+    
+    
