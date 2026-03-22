@@ -81,5 +81,27 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
             currentStep = ResetStep.resetPassword;
         });
     }
-    
+
+    /// ================= TIMER =================
+    void startTimer() async {
+        if (isTimerRunning) return;
+
+        isTimerRunning = true;
+        seconds = 60;
+
+        while (seconds > 0) {
+            await Future.delayed(const Duration(seconds: 1));
+
+            if (!mounted) return;
+
+            setState(() => seconds--);
+        }
+
+        isTimerRunning = false;
+    }
+
+    void resendOTP() {
+        startTimer();
+        showSnack("OTP Resent");
+    }
     
