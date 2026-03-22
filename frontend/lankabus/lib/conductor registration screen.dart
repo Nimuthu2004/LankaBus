@@ -182,3 +182,60 @@ class _ConductorRegisterScreenState extends State<ConductorRegisterScreen> {
                         ),
 
                         const SizedBox(height: 10),
+
+                         /// REGISTER BUTTON
+                        CustomButton(
+                          text: "Register",
+                          onPressed: () {
+
+                            if (_formKey.currentState!.validate()) {
+
+                              if (selectedRoute == null) {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  const SnackBar(
+                                      content: Text("Please select route")),
+                                );
+                                return;
+                              }
+
+                              if (!agreeTerms) {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  const SnackBar(
+                                      content: Text("Please agree to Terms")),
+                                );
+                                return;
+                              }
+
+                              if (passwordController.text !=
+                                  confirmPasswordController.text) {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  const SnackBar(
+                                      content: Text("Passwords do not match")),
+                                );
+                                return;
+                              }
+
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(
+                                    content: Text(
+                                        "Conductor Registered Successfully")),
+                              );
+
+                              Navigator.pop(context);
+                            }
+                          },
+                        ),
+
+                        const SizedBox(height: 30),
+                         ],
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+  
