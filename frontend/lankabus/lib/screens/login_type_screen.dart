@@ -15,7 +15,7 @@ class LoginTypeScreen extends StatelessWidget {
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: [Color(0xFF1E3C72), Color(0xFF2A5298)],
+            colors: [Color(0xFF3455EB), Color(0xFF14387A)],
           ),
         ),
         child: Center(
