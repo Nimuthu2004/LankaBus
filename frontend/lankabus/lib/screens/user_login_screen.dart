@@ -15,7 +15,7 @@ class UserLoginScreen extends StatelessWidget {
         padding: const EdgeInsets.all(20),
         decoration: const BoxDecoration(
           gradient: LinearGradient(
-            colors: [Color(0xFF3455EB), Color(0xFF14387A)],
+            colors: [Color(0xFF1E3C72), Color(0xFF2A5298)],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
           ),
