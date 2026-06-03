@@ -11,7 +11,7 @@
 
 A full-stack digital bus ticketing and journey management platform built for Sri Lanka's public transport system. Lanka Bus replaces physical tickets with QR-based digital tickets, real-time seat tracking, and multi-payment support — designed to eliminate revenue leakage and improve the passenger experience.
 
-![Lanka Bus Banner](banner.jpeg)
+![Lanka Bus Banner](screenshots/banner.jpeg)
 
 </div>
 
@@ -21,9 +21,9 @@ A full-stack digital bus ticketing and journey management platform built for Sri
 
 <div align="center">
 
-| Home               | Wallet                 | Seat Update                      | QR Ticket                |
-| ------------------ | ---------------------- | -------------------------------- | ------------------------ |
-| ![Home](home.jpeg) | ![Wallet](wallet.jpeg) | ![Seat Update](seat_update.jpeg) | ![QR Code](qr_code.jpeg) |
+| Home                           | Wallet                             | Seat Update                                  | QR Ticket                            |
+| ------------------------------ | ---------------------------------- | -------------------------------------------- | ------------------------------------ |
+| ![Home](screenshots/home.jpeg) | ![Wallet](screenshots/wallet.jpeg) | ![Seat Update](screenshots/seat_update.jpeg) | ![QR Code](screenshots/qr_code.jpeg) |
 
 </div>
 
