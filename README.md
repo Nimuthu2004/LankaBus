@@ -1,231 +1,209 @@
-🎫 Ticketing System Backend
-A robust Node.js & Express backend service for a real-time ticketing platform. This system processes user travel routes (Origin to Destination) and retrieves dynamic fare data from a PostgreSQL database.
+<div align="center">
 
-🚀 Features
-Route Lookup: Resolves human-readable station names (e.g., "Galle") to unique IDs.
+<img src="https://img.shields.io/badge/Platform-Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white" />
+<img src="https://img.shields.io/badge/Backend-Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" />
+<img src="https://img.shields.io/badge/Database-MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white" />
+<img src="https://img.shields.io/badge/Status-Academic_Project-blue?style=for-the-badge" />
 
-Fare Calculation: Queries a relational database to fetch specific fares between two points.
+# 🚌 Lanka Bus
+### *Your Journey, Just a Tap Away*
 
-Real-Time Ready: Optimized for low-latency responses using indexed database lookups.
+A full-stack digital bus ticketing and journey management platform built for Sri Lanka's public transport system. Lanka Bus replaces physical tickets with QR-based digital tickets, real-time seat tracking, and multi-payment support — designed to eliminate revenue leakage and improve the passenger experience.
 
-Error Handling: Validates inputs and provides clear feedback for missing routes or locations.
+</div>
 
-🛠️ Tech Stack
-Runtime: Node.js
+---
 
-Framework: Express.js
+## 📱 Screenshots
 
-Database: PostgreSQL (Supabase)
+| Home | AI Chatbot | Conductor View | Trip History | Wallet |
+|------|-----------|----------------|--------------|--------|
+| ![Home](./screenshots/home.png) | ![Chatbot](./screenshots/chatbot.png) | ![Conductor](./screenshots/conductor.png) | ![History](./screenshots/history.png) | ![Wallet](./screenshots/wallet.png) |
 
-Querying: [State your method here, e.g., @supabase/supabase-js or pg driver]
-- Revenue leakage
-- Passenger inconvenience
-- Lack of real-time seat availability
-- No digital payment options
-- Poor operational transparency
+---
 
-📂 Database Schema
-The backend interacts with two primary tables in the public schema:
+## 🚀 Features
 
-1. Stations
-Maps locations to unique identifiers.
-
-id (int8): Primary Key.
-
-Name (text): The station name (e.g., "Makumbura").
-
-Station_Code (int8): Unique numeric code.
-- User Registration & Login (JWT Authentication)
-- Route Search & Selection
-- Real-time Seat Reservation
+### Passenger App
+- JWT-based User Registration & Login
+- Route Search & Fare Lookup
+- Real-time Seat Selection & Reservation
 - QR-based Digital Ticket Generation
-- Multi-payment Support (LankaQR, Wallet, Card – simulated)
-- Booking History
+- Multi-payment Support (EzCash, LankaPay, Card — simulated)
+- Wallet with Recharge History
+- Trip / Booking History
+- AI Chatbot Assistant
 - Multi-language Support (Sinhala / Tamil / English)
-- Push Notifications
+- Push Notifications (Firebase)
 
-- User Registration & Login (JWT Authentication)
-- Route Search & Selection
-- Real-time Seat Reservation
-- QR-based Digital Ticket Generation
-- Multi-payment Support (LankaQR, Wallet, Card – simulated)
-- Booking History
-- Multi-language Support (Sinhala / Tamil / English)
-- Push Notifications
-2. Fares
-Contains the pricing logic for specific journeys.
-
-id (int8): Primary Key.
-- Secure Login
-- QR Code Ticket Validation
+### Conductor App
+- Secure Login with Role-Based Access
+- QR Code Ticket Validation (Scan & Verify)
+- Live Seat Count Dashboard
 - Offline Ticket Verification
-- Daily Trip Summary
+- Journey Summary & Daily Trip Reports
 
-- Secure Login
-- QR Code Ticket Validation
-- Offline Ticket Verification
-- Daily Trip Summary
-start_station_id (int8): Foreign Key to Stations.id.
-
-end_station_id (int8): Foreign Key to Stations.id.
-- Revenue Analytics
+### Admin Dashboard
+- Revenue Analytics & Operational Reports
 - Route & Bus Management
 - Complaint Management System
-- Operational Reports
 - Data Analytics
-
-- Revenue Analytics
-- Route & Bus Management
-- Complaint Management System
-- Operational Reports
-- Data Analytics
-amount (float8): The ticket price for this specific route.
-
-🚦 Getting Started
-Prerequisites
-Node.js (v18+ recommended)
-
-A Supabase project or PostgreSQL instance
-- AI-based Complaint Assistant
-- Real-time GPS Tracking
-- Firebase Push Notifications
 
 ---
 
 ## 🏗 System Architecture
 
 ```
-Passenger App (Flutter)
-        |
-Conductor App (Flutter)
-        |
-Admin Dashboard (Flutter Web)
-        |
-------------------------------
-        |
-Node.js + Express REST API
-        |
-MongoDB Atlas
-        |
-External Services:
-- Payment Gateway
-- Firebase Cloud Messaging
-- Google Maps API
+┌─────────────────────────────────────────────────┐
+│              Client Applications                │
+│  Passenger App  │  Conductor App  │  Admin Web  │
+│      (Flutter)  │     (Flutter)   │  (Flutter)  │
+└────────────────────┬────────────────────────────┘
+                     │ REST API (HTTP/JSON)
+┌────────────────────▼────────────────────────────┐
+│           Node.js + Express REST API            │
+│     JWT Auth │ Route Logic │ Booking Engine     │
+└────────────────────┬────────────────────────────┘
+                     │
+┌────────────────────▼────────────────────────────┐
+│               MongoDB Atlas                     │
+└─────────────────────────────────────────────────┘
+          │                    │
+┌─────────▼────────┐  ┌────────▼──────────────────┐
+│ Firebase Cloud   │  │  Payment Gateway          │
+│ Messaging (FCM)  │  │  EzCash / LankaPay / Card │
+└──────────────────┘  └───────────────────────────┘
 ```
 
 ---
 
-## 🛠 Technologies Used
+## 🛠 Tech Stack
 
-### Frontend
-
-- Flutter (Cross-platform Mobile Development)
-- Dart
-- Dio (API Integration)
-- Provider (State Management)
-- QR Scanner Plugin
-- Firebase Cloud Messaging
-- Google Maps API
-
-### Backend
-
-- Node.js
-- Express.js
-- MongoDB (Mongoose)
-- JWT Authentication
-- bcrypt (Password Encryption)
-- QR Code Generator
-
-### Database
-
-- MongoDB Atlas (Cloud Database)
-
-### Tools
-
-- Git & GitHub (Version Control)
-- Postman (API Testing)
-- ClickUp (Project Management)
-- Figma (UI/UX Design)
+| Layer | Technology |
+|-------|-----------|
+| Mobile Frontend | Flutter, Dart |
+| State Management | Provider |
+| API Integration | Dio |
+| Backend | Node.js, Express.js |
+| Database | MongoDB Atlas (Mongoose) |
+| Authentication | JWT, bcrypt |
+| QR Code | QR Generator + QR Scanner Plugin |
+| Push Notifications | Firebase Cloud Messaging |
+| Maps | Google Maps API |
+| Project Management | ClickUp |
+| UI/UX Design | Figma |
+| Version Control | Git & GitHub |
+| API Testing | Postman |
 
 ---
 
 ## 📂 Project Structure
 
-### Backend Structure
-
 ```
-lankabus-backend/
+lanka-bus/
+├── lankabus-backend/
+│   ├── models/           # Mongoose schemas (User, Booking, Bus, Route...)
+│   ├── controllers/      # Business logic
+│   ├── routes/           # Express route definitions
+│   ├── middleware/        # JWT auth, RBAC, error handling
+│   ├── config/           # DB connection, env config
+│   └── server.js
 │
-├── models/
-├── controllers/
-├── routes/
-├── middleware/
-├── config/
-└── server.js
+└── lankabus-flutter/
+    └── lib/
+        ├── screens/      # UI screens (Home, Booking, Wallet, QR...)
+        ├── services/     # API calls (Dio), local storage
+        ├── models/       # Dart data models
+        ├── providers/    # State management
+        └── main.dart
 ```
-
-### Frontend Structure (Flutter)
-
-```
-lib/
-├── screens/
-├── services/
-├── models/
-├── providers/
-└── main.dart
-```
-
----
-
-## 🔐 Security Features
-
-- JWT-based Authentication
-- Role-Based Access Control (RBAC)
-- Encrypted Passwords (bcrypt)
-- Secure API Middleware
-- Token Storage using Flutter Secure Storage
 
 ---
 
 ## 🔄 System Flow
 
-1. Passenger registers and logs in.
-2. Passenger selects route and seat.
-3. Booking is created.
-4. Payment is processed.
-5. QR code ticket is generated.
-6. Conductor scans QR for validation.
-7. Admin dashboard updates revenue and analytics.
+```
+1. Passenger registers & logs in
+        ↓
+2. Selects route & available seat
+        ↓
+3. Booking created & payment processed
+        ↓
+4. QR code ticket generated & sent
+        ↓
+5. Conductor scans QR to validate
+        ↓
+6. Admin dashboard updates revenue & analytics
+```
 
 ---
 
-## 📊 Project Methodology
+## 🔐 Security
 
-- Agile Software Development Life Cycle (SDLC)
-- Scrum-based Sprint Planning
+- JWT-based Authentication
+- Role-Based Access Control (RBAC) — Passenger / Conductor / Admin
+- Password Encryption (bcrypt)
+- Secure API Middleware
+- Flutter Secure Storage for token persistence
+
+---
+
+## ⚙️ Getting Started
+
+### Prerequisites
+
+- Node.js v18+
+- Flutter SDK 3.x
+- MongoDB Atlas account
+- Firebase project (for FCM)
+
+### Backend Setup
+
+```bash
+git clone https://github.com/your-org/lanka-bus.git
+cd lankabus-backend
+npm install
+cp .env.example .env
+# Fill in MONGO_URI, JWT_SECRET, FCM keys
+npm start
+```
+
+### Flutter App Setup
+
+```bash
+cd lankabus-flutter
+flutter pub get
+# Add google-services.json (Android) and GoogleService-Info.plist (iOS)
+flutter run
+```
+
+---
+
+## 📊 Methodology
+
+- Agile SDLC with Scrum-based Sprint Planning
 - Object-Oriented Analysis & Design (OOAD)
-- Modular Team-based Development
+- Modular team-based development
 
 ---
 
-## 📌 Future Improvements
+## 🚧 Future Improvements
 
-- Live GPS tracking integration
-- Advanced AI chatbot
-- Full LankaQR production integration
-- Government regulatory dashboard
-- Nationwide deployment expansion
+- [ ] Live GPS bus tracking integration
+- [ ] Advanced AI chatbot (extended NLP)
+- [ ] Full LankaQR production payment integration
+- [ ] Government regulatory compliance dashboard
+- [ ] Nationwide deployment & scaling
 
 ---
 
 ## 👨‍💻 Development Team
 
-SE-38 Group
-Informatics Institute of Technology (IIT)
-University of Westminster
+**SE-38 Group**
+Informatics Institute of Technology (IIT) — University of Westminster
 
 ---
 
 ## 📜 License
 
-This project was developed for academic purposes.
+This project was developed for **academic purposes** at IIT / University of Westminster.
