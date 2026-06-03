@@ -6,9 +6,12 @@
 <img src="https://img.shields.io/badge/Status-Academic_Project-blue?style=for-the-badge" />
 
 # 🚌 Lanka Bus
-### *Your Journey, Just a Tap Away*
+
+### _Your Journey, Just a Tap Away_
 
 A full-stack digital bus ticketing and journey management platform built for Sri Lanka's public transport system. Lanka Bus replaces physical tickets with QR-based digital tickets, real-time seat tracking, and multi-payment support — designed to eliminate revenue leakage and improve the passenger experience.
+
+![Lanka Bus Banner](banner.jpeg)
 
 </div>
 
@@ -16,15 +19,20 @@ A full-stack digital bus ticketing and journey management platform built for Sri
 
 ## 📱 Screenshots
 
-| Home | AI Chatbot | Conductor View | Trip History | Wallet |
-|------|-----------|----------------|--------------|--------|
-| ![Home](./screenshots/home.png) | ![Chatbot](./screenshots/chatbot.png) | ![Conductor](./screenshots/conductor.png) | ![History](./screenshots/history.png) | ![Wallet](./screenshots/wallet.png) |
+<div align="center">
+
+| Home               | Wallet                 | Seat Update                      | QR Ticket                |
+| ------------------ | ---------------------- | -------------------------------- | ------------------------ |
+| ![Home](home.jpeg) | ![Wallet](wallet.jpeg) | ![Seat Update](seat_update.jpeg) | ![QR Code](qr_code.jpeg) |
+
+</div>
 
 ---
 
 ## 🚀 Features
 
 ### Passenger App
+
 - JWT-based User Registration & Login
 - Route Search & Fare Lookup
 - Real-time Seat Selection & Reservation
@@ -37,6 +45,7 @@ A full-stack digital bus ticketing and journey management platform built for Sri
 - Push Notifications (Firebase)
 
 ### Conductor App
+
 - Secure Login with Role-Based Access
 - QR Code Ticket Validation (Scan & Verify)
 - Live Seat Count Dashboard
@@ -44,6 +53,7 @@ A full-stack digital bus ticketing and journey management platform built for Sri
 - Journey Summary & Daily Trip Reports
 
 ### Admin Dashboard
+
 - Revenue Analytics & Operational Reports
 - Route & Bus Management
 - Complaint Management System
@@ -79,21 +89,20 @@ A full-stack digital bus ticketing and journey management platform built for Sri
 
 ## 🛠 Tech Stack
 
-| Layer | Technology |
-|-------|-----------|
-| Mobile Frontend | Flutter, Dart |
-| State Management | Provider |
-| API Integration | Dio |
-| Backend | Node.js, Express.js |
-| Database | MongoDB Atlas (Mongoose) |
-| Authentication | JWT, bcrypt |
-| QR Code | QR Generator + QR Scanner Plugin |
-| Push Notifications | Firebase Cloud Messaging |
-| Maps | Google Maps API |
-| Project Management | ClickUp |
-| UI/UX Design | Figma |
-| Version Control | Git & GitHub |
-| API Testing | Postman |
+| Layer              | Technology                       |
+| ------------------ | -------------------------------- |
+| Mobile Frontend    | Flutter, Dart                    |
+| State Management   | Provider                         |
+| API Integration    | Dio                              |
+| Backend            | Node.js, Express.js              |
+| Database           | MongoDB Atlas (Mongoose)         |
+| Authentication     | JWT, bcrypt                      |
+| QR Code            | QR Generator + QR Scanner Plugin |
+| Push Notifications | Firebase Cloud Messaging         |
+| Maps               | Google Maps API                  |
+| UI/UX Design       | Figma                            |
+| Version Control    | Git & GitHub                     |
+| API Testing        | Postman                          |
 
 ---
 
@@ -176,14 +185,6 @@ flutter pub get
 # Add google-services.json (Android) and GoogleService-Info.plist (iOS)
 flutter run
 ```
-
----
-
-## 📊 Methodology
-
-- Agile SDLC with Scrum-based Sprint Planning
-- Object-Oriented Analysis & Design (OOAD)
-- Modular team-based development
 
 ---
 
